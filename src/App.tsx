@@ -7,6 +7,8 @@ import { Oscar } from './components/Oscar'
 import { Button } from './components/Button'
 import { Input } from './components/Input'
 import { Container } from './components/Container'
+import { ThemeContextProvider } from './components/context/ThemeContext'
+import { Box } from './components/context/Box'
 import './App.css'
 
 function App() {
@@ -47,6 +49,9 @@ function App() {
       />
       <Input value='' handleChange={(event) => console.log(event)} />
       <Container styles={{ border: '1px solid black', padding: '1rem' }} />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </div>
   )
 }
