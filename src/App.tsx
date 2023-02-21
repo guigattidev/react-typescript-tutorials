@@ -16,6 +16,7 @@ import { MutableRef } from './components/refs/MutableRef'
 import { Counter } from './components/class/Counter'
 import { Private } from './components/auth/Private'
 import { Profile } from './components/auth/Profile'
+import { List } from './components/generics/List'
 import './App.css'
 
 function App() {
@@ -66,6 +67,26 @@ function App() {
       <MutableRef />
       <Counter message='The count value is ' />
       <Private isLoggedIn={true} Component={Profile} />
+      <List
+        items={[
+          {
+            id: 1,
+            first: 'Bruce',
+            last: 'Wayne',
+          },
+          {
+            id: 2,
+            first: 'Clark',
+            last: 'Kent',
+          },
+          {
+            id: 3,
+            first: 'Princess',
+            last: 'Diana',
+          },
+        ]}
+        onClick={(item) => console.log(item)}
+      />
     </div>
   )
 }
