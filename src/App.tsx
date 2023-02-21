@@ -1,12 +1,12 @@
 import { Greet } from './components/props/Greet'
 import { Person } from './components/props/Person'
 import { PersonList } from './components/props/PersonList'
-import { Status } from './components/Status'
-import { Heading } from './components/Heading'
-import { Oscar } from './components/Oscar'
-import { Button } from './components/Button'
-import { Input } from './components/Input'
-import { Container } from './components/Container'
+import { Status } from './components/props/Status'
+import { Heading } from './components/props/Heading'
+import { Oscar } from './components/props/Oscar'
+import { Button } from './components/props/Button'
+import { Input } from './components/props/Input'
+import { Container } from './components/props/Container'
 import { ThemeContextProvider } from './components/context/ThemeContext'
 import { Box } from './components/context/Box'
 import { UserContextProvider } from './components/context/UserContext'
@@ -19,7 +19,8 @@ import { Profile } from './components/auth/Profile'
 import { List } from './components/generics/List'
 import { RandomNumber } from './components/restriction/RandomNumber'
 import { Toast } from './components/templateliterals/Toast'
-import { CustomButton } from './components/html/Button'
+// import { CustomButton } from './components/html/Button'
+import { Text } from './components/polymorphic/Text'
 import './App.css'
 
 function App() {
@@ -92,9 +93,18 @@ function App() {
       />
       <RandomNumber value={10} isPositive />
       <Toast position='center' />
-      <CustomButton variant='primary' onClick={() => console.log('Clicked')}>
+      {/* <CustomButton variant='primary' onClick={() => console.log('Clicked')}>
         Button Label
-      </CustomButton>
+      </CustomButton> */}
+      <Text size='lg' as='h1'>
+        Heading
+      </Text>
+      <Text size='md' as='p'>
+        Paragraph
+      </Text>
+      <Text size='sm' color='secondary' as='label' htmlFor='someId'>
+        Label
+      </Text>
     </div>
   )
 }
